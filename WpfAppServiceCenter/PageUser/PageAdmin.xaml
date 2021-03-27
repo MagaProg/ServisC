@@ -1,0 +1,21 @@
+﻿<Page x:Class="WpfAppServiceCenter.PageUser.PageAdmin"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfAppServiceCenter.PageUser"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PageAdmin">
+
+    <Grid>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <StackPanel>
+                <Button x:Name="SozZakaz" FontSize="30" Click="SozZakaz_Click" Content="Оформимть заказ" Width="369" Height="84"/>
+            </StackPanel>
+            <StackPanel>
+                <Button  x:Name="SelectOrders"  FontSize="30"  Width="369" Height="84" Click="SelectOrders_Click"  Content="Оформленные заказы" />
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>

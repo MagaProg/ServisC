@@ -1,0 +1,54 @@
+﻿<Page x:Class="WpfAppServiceCenter.Org.PageOrdersSelect"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfAppServiceCenter.Org"
+      mc:Ignorable="d" 
+      d:DesignHeight="700" d:DesignWidth="1200"
+      Title="PageOrdersSelect" Loaded="Page_Loaded">
+
+    <Grid>
+
+
+        <DataGrid VerticalAlignment="Top"  CanUserAddRows="False"  AutoGenerateColumns="False" x:Name="dataGridOrders"  SelectionChanged="dataGridOrders_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding FullName}" Width="*" Header="Клиент Ф И О"/>
+                <DataGridTextColumn  Binding="{Binding Telephone}"  Width="*" Header="Телефон"/>
+                <DataGridTextColumn  Binding="{Binding Address}" Width="*" Header="Адрес"/>
+                <DataGridTextColumn  Binding="{Binding Orders.NameTechnic}" Width="*" Header="Название техники"/>
+                <DataGridTextColumn  Binding="{Binding Orders.DateOrders}" Width="*" Header="Дата регистрации заказа"/>
+                <DataGridTextColumn  Binding="{Binding Orders.Malfunctions}" Width="*" Header="Описание несправности"/>
+
+                <DataGridTemplateColumn Header="Действие">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate >
+                            <Button x:Name="OrdersNaRem" Click="OrdersNaRem_Click"  Content="Ромонтировать" />
+                            
+                        </DataTemplate>
+                        
+                    </DataGridTemplateColumn.CellTemplate>
+                    
+
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="Действие">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate >
+
+                            <Button Content="Удалить" x:Name="DALETE" Click="DALETE_Click" />
+
+                        </DataTemplate>
+
+                    </DataGridTemplateColumn.CellTemplate>
+
+
+                </DataGridTemplateColumn>
+
+            </DataGrid.Columns>
+
+        </DataGrid>
+
+
+    </Grid>
+</Page>

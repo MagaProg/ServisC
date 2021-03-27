@@ -1,0 +1,37 @@
+﻿<Page x:Class="WpfAppServiceCenter.Org.PageMasterOrders"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfAppServiceCenter.Org"
+      mc:Ignorable="d" 
+      d:DesignHeight="700" d:DesignWidth="1200"
+      Title="PageMasterOrders" Loaded="Page_Loaded">
+
+    <Grid>
+        <DataGrid CanUserAddRows="False" VerticalAlignment="Top" AutoGenerateColumns="False"  x:Name="dtagrid">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Время окончания ремонта" Binding="{Binding Vremonta }"/>
+                <DataGridTextColumn Header="Стоимость ремонта" Binding="{Binding Stoimremon}"/>
+                <DataGridTextColumn Header="Описание дефекта" Binding="{Binding opisrem}"/>
+                <DataGridTextColumn Header="Затронутые элементы" Binding="{Binding zatrelement}"/>
+                <DataGridTextColumn Header="Детали на замену" Binding="{Binding detalnaxamen }"/>
+                <DataGridTextColumn Header="Стоимость диагности" Binding="{Binding stoimDiagnos}"/>
+                <DataGridTextColumn Header="Название техники" Binding="{Binding Orders.NameTechnic }"/>
+                <DataGridTextColumn Header="Описание неисправности" Binding="{Binding Orders.Malfunctions }"/>
+                <DataGridTextColumn Header="Дата приема" Binding="{Binding Orders.DateOrders }"/>
+                <DataGridTextColumn Header="Ф И О клиент" Binding="{Binding Cluent.FullName }"/>
+                <DataGridTextColumn Header="Телефон" Binding="{Binding Cluent.Telephone }"/>
+
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Завершить ремонт" x:Name="ZavvvvRem" Click="ZavvvvRem_Click" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>

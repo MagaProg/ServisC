@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8d0d628f80e64085bbd196a5316efea0" Name="Diagram1">
+        <EntityTypeShape EntityType="ServiceCenterModel.Cluent" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ServiceCenterModel.Master" Width="1.5" PointX="5.25" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ServiceCenterModel.MasterOrdersMaster" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="ServiceCenterModel.Orders" Width="1.5" PointX="7.5" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ServiceCenterModel.Rolle" Width="1.5" PointX="5.75" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ServiceCenterModel.User" Width="1.5" PointX="8" PointY="5.875" IsExpanded="true" />
+        <AssociationConnector Association="ServiceCenterModel.FK_Cluent_Orders" ManuallyRouted="false" />
+        <AssociationConnector Association="ServiceCenterModel.FK_MasterOrdersMaster_Cluent" ManuallyRouted="false" />
+        <AssociationConnector Association="ServiceCenterModel.FK_MasterOrdersMaster_Cluent1" ManuallyRouted="false" />
+        <AssociationConnector Association="ServiceCenterModel.FK_MasterOrdersMaster_Cluent2" ManuallyRouted="false" />
+        <AssociationConnector Association="ServiceCenterModel.FK_Master_MasterOrdersMaster" ManuallyRouted="false" />
+        <AssociationConnector Association="ServiceCenterModel.FK_Orders_Master" ManuallyRouted="false" />
+        <AssociationConnector Association="ServiceCenterModel.FK_MasterOrdersMaster_Orders" ManuallyRouted="false" />
+        <AssociationConnector Association="ServiceCenterModel.FK_Orders_MasterOrdersMaster" ManuallyRouted="false" />
+        <AssociationConnector Association="ServiceCenterModel.FK_Orders_MasterOrdersMaster1" ManuallyRouted="false" />
+        <AssociationConnector Association="ServiceCenterModel.FK_Orders_MasterOrdersMaster2" ManuallyRouted="false" />
+        <AssociationConnector Association="ServiceCenterModel.FK_User_Rolle" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

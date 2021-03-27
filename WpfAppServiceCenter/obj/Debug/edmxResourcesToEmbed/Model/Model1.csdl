@@ -1,0 +1,268 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ServiceCenterModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Cluent">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FullName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Telephone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="idOrders" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Orders" Relationship="Self.FK_Cluent_Orders" FromRole="Cluent" ToRole="Orders" />
+    <NavigationProperty Name="MasterOrdersMaster" Relationship="Self.FK_MasterOrdersMaster_Cluent" FromRole="Cluent" ToRole="MasterOrdersMaster" />
+    <NavigationProperty Name="MasterOrdersMaster1" Relationship="Self.FK_MasterOrdersMaster_Cluent1" FromRole="Cluent" ToRole="MasterOrdersMaster" />
+    <NavigationProperty Name="MasterOrdersMaster2" Relationship="Self.FK_MasterOrdersMaster_Cluent2" FromRole="Cluent" ToRole="MasterOrdersMaster" />
+  </EntityType>
+  <EntityType Name="Master">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="idOrders" Type="Int32" />
+    <NavigationProperty Name="MasterOrdersMaster" Relationship="Self.FK_Master_MasterOrdersMaster" FromRole="Master" ToRole="MasterOrdersMaster" />
+    <NavigationProperty Name="Orders" Relationship="Self.FK_Orders_Master" FromRole="Master" ToRole="Orders" />
+  </EntityType>
+  <EntityType Name="MasterOrdersMaster">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Vremonta" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Stoimremon" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="opisrem" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="zatrelement" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="detalnaxamen" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="stoimDiagnos" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="idOrders" Type="Int32" />
+    <Property Name="idCluent" Type="Int32" />
+    <NavigationProperty Name="Cluent" Relationship="Self.FK_MasterOrdersMaster_Cluent" FromRole="MasterOrdersMaster" ToRole="Cluent" />
+    <NavigationProperty Name="Cluent1" Relationship="Self.FK_MasterOrdersMaster_Cluent1" FromRole="MasterOrdersMaster" ToRole="Cluent" />
+    <NavigationProperty Name="Cluent2" Relationship="Self.FK_MasterOrdersMaster_Cluent2" FromRole="MasterOrdersMaster" ToRole="Cluent" />
+    <NavigationProperty Name="Master" Relationship="Self.FK_Master_MasterOrdersMaster" FromRole="MasterOrdersMaster" ToRole="Master" />
+    <NavigationProperty Name="Orders" Relationship="Self.FK_MasterOrdersMaster_Orders" FromRole="MasterOrdersMaster" ToRole="Orders" />
+    <NavigationProperty Name="Orders1" Relationship="Self.FK_Orders_MasterOrdersMaster" FromRole="MasterOrdersMaster" ToRole="Orders" />
+    <NavigationProperty Name="Orders2" Relationship="Self.FK_Orders_MasterOrdersMaster1" FromRole="MasterOrdersMaster" ToRole="Orders" />
+    <NavigationProperty Name="Orders3" Relationship="Self.FK_Orders_MasterOrdersMaster2" FromRole="MasterOrdersMaster" ToRole="Orders" />
+  </EntityType>
+  <EntityType Name="Orders">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NameTechnic" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Malfunctions" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DateOrders" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="idMaster" Type="Int32" />
+    <Property Name="idMasterOrders" Type="Int32" />
+    <NavigationProperty Name="Cluent" Relationship="Self.FK_Cluent_Orders" FromRole="Orders" ToRole="Cluent" />
+    <NavigationProperty Name="Master" Relationship="Self.FK_Orders_Master" FromRole="Orders" ToRole="Master" />
+    <NavigationProperty Name="MasterOrdersMaster" Relationship="Self.FK_MasterOrdersMaster_Orders" FromRole="Orders" ToRole="MasterOrdersMaster" />
+    <NavigationProperty Name="MasterOrdersMaster1" Relationship="Self.FK_Orders_MasterOrdersMaster" FromRole="Orders" ToRole="MasterOrdersMaster" />
+    <NavigationProperty Name="MasterOrdersMaster2" Relationship="Self.FK_Orders_MasterOrdersMaster1" FromRole="Orders" ToRole="MasterOrdersMaster" />
+    <NavigationProperty Name="MasterOrdersMaster3" Relationship="Self.FK_Orders_MasterOrdersMaster2" FromRole="Orders" ToRole="MasterOrdersMaster" />
+  </EntityType>
+  <EntityType Name="Rolle">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NameRolle" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="User" Relationship="Self.FK_User_Rolle" FromRole="Rolle" ToRole="User" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Login" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="idRolle" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Rolle" Relationship="Self.FK_User_Rolle" FromRole="User" ToRole="Rolle" />
+  </EntityType>
+  <Association Name="FK_Cluent_Orders">
+    <End Role="Orders" Type="Self.Orders" Multiplicity="1" />
+    <End Role="Cluent" Type="Self.Cluent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Orders">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Cluent">
+        <PropertyRef Name="idOrders" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MasterOrdersMaster_Cluent">
+    <End Role="Cluent" Type="Self.Cluent" Multiplicity="0..1" />
+    <End Role="MasterOrdersMaster" Type="Self.MasterOrdersMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cluent">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="MasterOrdersMaster">
+        <PropertyRef Name="idCluent" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MasterOrdersMaster_Cluent1">
+    <End Role="Cluent" Type="Self.Cluent" Multiplicity="0..1" />
+    <End Role="MasterOrdersMaster" Type="Self.MasterOrdersMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cluent">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="MasterOrdersMaster">
+        <PropertyRef Name="idCluent" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MasterOrdersMaster_Cluent2">
+    <End Role="Cluent" Type="Self.Cluent" Multiplicity="0..1" />
+    <End Role="MasterOrdersMaster" Type="Self.MasterOrdersMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cluent">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="MasterOrdersMaster">
+        <PropertyRef Name="idCluent" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Master_MasterOrdersMaster">
+    <End Role="MasterOrdersMaster" Type="Self.MasterOrdersMaster" Multiplicity="0..1" />
+    <End Role="Master" Type="Self.Master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MasterOrdersMaster">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Master">
+        <PropertyRef Name="idOrders" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Orders_Master">
+    <End Role="Master" Type="Self.Master" Multiplicity="0..1" />
+    <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Master">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="idMaster" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MasterOrdersMaster_Orders">
+    <End Role="Orders" Type="Self.Orders" Multiplicity="0..1" />
+    <End Role="MasterOrdersMaster" Type="Self.MasterOrdersMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Orders">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="MasterOrdersMaster">
+        <PropertyRef Name="idOrders" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Orders_MasterOrdersMaster">
+    <End Role="MasterOrdersMaster" Type="Self.MasterOrdersMaster" Multiplicity="0..1" />
+    <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MasterOrdersMaster">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="idMasterOrders" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Orders_MasterOrdersMaster1">
+    <End Role="MasterOrdersMaster" Type="Self.MasterOrdersMaster" Multiplicity="0..1" />
+    <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MasterOrdersMaster">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="idMaster" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Orders_MasterOrdersMaster2">
+    <End Role="MasterOrdersMaster" Type="Self.MasterOrdersMaster" Multiplicity="0..1" />
+    <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MasterOrdersMaster">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="idMasterOrders" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Rolle">
+    <End Role="Rolle" Type="Self.Rolle" Multiplicity="1" />
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rolle">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="idRolle" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ServiceCenterEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Cluent" EntityType="Self.Cluent" />
+    <EntitySet Name="Master" EntityType="Self.Master" />
+    <EntitySet Name="MasterOrdersMaster" EntityType="Self.MasterOrdersMaster" />
+    <EntitySet Name="Orders" EntityType="Self.Orders" />
+    <EntitySet Name="Rolle" EntityType="Self.Rolle" />
+    <EntitySet Name="User" EntityType="Self.User" />
+    <AssociationSet Name="FK_Cluent_Orders" Association="Self.FK_Cluent_Orders">
+      <End Role="Orders" EntitySet="Orders" />
+      <End Role="Cluent" EntitySet="Cluent" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MasterOrdersMaster_Cluent" Association="Self.FK_MasterOrdersMaster_Cluent">
+      <End Role="Cluent" EntitySet="Cluent" />
+      <End Role="MasterOrdersMaster" EntitySet="MasterOrdersMaster" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MasterOrdersMaster_Cluent1" Association="Self.FK_MasterOrdersMaster_Cluent1">
+      <End Role="Cluent" EntitySet="Cluent" />
+      <End Role="MasterOrdersMaster" EntitySet="MasterOrdersMaster" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MasterOrdersMaster_Cluent2" Association="Self.FK_MasterOrdersMaster_Cluent2">
+      <End Role="Cluent" EntitySet="Cluent" />
+      <End Role="MasterOrdersMaster" EntitySet="MasterOrdersMaster" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Master_MasterOrdersMaster" Association="Self.FK_Master_MasterOrdersMaster">
+      <End Role="MasterOrdersMaster" EntitySet="MasterOrdersMaster" />
+      <End Role="Master" EntitySet="Master" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Orders_Master" Association="Self.FK_Orders_Master">
+      <End Role="Master" EntitySet="Master" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MasterOrdersMaster_Orders" Association="Self.FK_MasterOrdersMaster_Orders">
+      <End Role="Orders" EntitySet="Orders" />
+      <End Role="MasterOrdersMaster" EntitySet="MasterOrdersMaster" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Orders_MasterOrdersMaster" Association="Self.FK_Orders_MasterOrdersMaster">
+      <End Role="MasterOrdersMaster" EntitySet="MasterOrdersMaster" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Orders_MasterOrdersMaster1" Association="Self.FK_Orders_MasterOrdersMaster1">
+      <End Role="MasterOrdersMaster" EntitySet="MasterOrdersMaster" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Orders_MasterOrdersMaster2" Association="Self.FK_Orders_MasterOrdersMaster2">
+      <End Role="MasterOrdersMaster" EntitySet="MasterOrdersMaster" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Rolle" Association="Self.FK_User_Rolle">
+      <End Role="Rolle" EntitySet="Rolle" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

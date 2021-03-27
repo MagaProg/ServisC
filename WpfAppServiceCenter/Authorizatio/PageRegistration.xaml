@@ -1,0 +1,36 @@
+﻿<Page x:Class="WpfAppServiceCenter.Authorizatio.PageRegistration"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfAppServiceCenter.Authorizatio"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PageRegistration">
+
+    <Grid>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+        <TextBlock Style="{StaticResource tex}" HorizontalAlignment="Center" Width="500"  FontSize="26" VerticalAlignment="Top" TextAlignment="Center"   Margin="10" Text="Р е г и с т р а ц и я" Height="39"/>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock  Style="{StaticResource tex}" Text="Выберите роль"/>
+                <ComboBox DisplayMemberPath="NameRolle" x:Name="CMDRolli"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock  Style="{StaticResource tex}" Text="Введите логин:"/>
+                <TextBox x:Name="Vlogin"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Style="{StaticResource tex}" Text="Введите пароль:"/>
+                <PasswordBox x:Name="Vpassword"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Style="{StaticResource tex}" Text="Подтвердите пароль:"/>
+                <PasswordBox  PasswordChanged="Vpassword2_PasswordChanged" x:Name="Vpassword2"/>
+            </StackPanel>
+            
+            <Button IsEnabled="False" x:Name= "btnAuto2" Click="btnAuto2_Click"  Margin="10" Content="Создать" />
+
+        </StackPanel>
+    </Grid>
+</Page>

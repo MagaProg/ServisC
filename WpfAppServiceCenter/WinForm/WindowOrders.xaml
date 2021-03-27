@@ -1,0 +1,88 @@
+﻿<Window x:Class="WpfAppServiceCenter.WinForm.WindowOrders"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfAppServiceCenter.WinForm"
+        mc:Ignorable="d"
+        Title="Заказ" ResizeMode="NoResize" Height="546.834" Width="905.063"
+       >
+    <Window.Background>
+        <ImageBrush ImageSource="/resurs/seeee.png"/>
+    </Window.Background>
+
+    <Grid>
+
+        <StackPanel Margin="50,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Клиент Ф И О"  Style="{StaticResource texWindows}"/>
+                <TextBlock Foreground="#FDC92B" TextWrapping="Wrap" x:Name="Fiotex" Text="dwfwscswvdc" Height="50" Width="275" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Телефон"  Style="{StaticResource texWindows}"/>
+                <TextBlock  Foreground="#FDC92B" TextWrapping="Wrap" x:Name="TelTex" Height="50" Width="275" Text="dwfwscswvdc" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Адрес"  Style="{StaticResource texWindows}"/>
+                <TextBlock  Foreground="#FDC92B" TextWrapping="Wrap" x:Name="AresTex" Height="50" Width="275" Text="dwfwscswvdc" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Название техн."  Style="{StaticResource texWindows}"/>
+                <TextBlock  Foreground="#FDC92B" TextWrapping="Wrap" x:Name="NameTex"  Height="50" Width="275" Text="dwfwscswvdc" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock  Text="Описание неис."  Style="{StaticResource texWindows}"/>
+                <TextBlock  Foreground="#FDC92B" x:Name="OpisTex" TextWrapping="Wrap" Height="107" Width="275" Text="dwfwscswvdc" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Дата регист."  Style="{StaticResource texWindows}"/>
+                <TextBlock  Foreground="#FDC92B" TextWrapping="Wrap" x:Name="DataTex" Height="50" Width="275" Text="dwfwscswvdc" />
+            </StackPanel>
+
+        </StackPanel>
+
+        <StackPanel Margin="0,0,50,0"  VerticalAlignment="Top" HorizontalAlignment="Right" Orientation="Vertical">
+
+            <StackPanel Margin="0,0,0,10" HorizontalAlignment="Center"  Orientation="Vertical">
+                <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left"  Orientation="Vertical">
+                    <TextBlock Text="Приблизительное время готовности" Style="{StaticResource texOrders}" Width="349"/>
+                    <TextBox x:Name="FIO" Style="{StaticResource TextBoxOrders}" />
+                </StackPanel>
+                <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left" Orientation="Vertical">
+                    <TextBlock Text="Стоимость ремонта" Style="{StaticResource texOrders}" Width="348"/>
+                    <TextBox x:Name="Teleh" Style="{StaticResource TextBoxOrders}" />
+                </StackPanel>
+                <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left"  Orientation="Vertical">
+                    <TextBlock Text="Описание дефекта" Style="{StaticResource texOrders}" Width="349"/>
+                    <TextBox x:Name="Adres" Style="{StaticResource TextBoxOrders}" />
+                </StackPanel>
+
+
+            </StackPanel>
+
+            <StackPanel HorizontalAlignment="Center"  Orientation="Vertical">
+                <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left"  Orientation="Vertical">
+                    <TextBlock Text="Затронутые элементы системы" Style="{StaticResource texOrders}" Width="348"/>
+                    <TextBox x:Name="NAzvTech"  Style="{StaticResource TextBoxOrders}" />
+                </StackPanel>
+                <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left" Orientation="Vertical">
+                    <TextBlock Text="Детали на замену" Style="{StaticResource texOrders}" Width="349"/>
+                    <TextBox x:Name="Opis" Style="{StaticResource TextBoxOrders}" />
+                </StackPanel>
+                <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left"  Orientation="Vertical">
+                    <TextBlock Text="Стоимость диагностики" Style="{StaticResource texOrders}" Width="349"/>
+                    <TextBox x:Name="DataRegis" Style="{StaticResource TextBoxOrders}" />
+                </StackPanel>
+
+
+            </StackPanel>
+            <StackPanel>
+
+
+            </StackPanel>
+
+        </StackPanel>
+
+        <Button x:Name="OfOrders" Click="OfOrders_Click" Margin="362,0,320,30.5" Content="Приступить к ремонту" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="34" Width="217" />
+    </Grid>
+</Window>

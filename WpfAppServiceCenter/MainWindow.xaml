@@ -1,0 +1,17 @@
+﻿<Window x:Class="WpfAppServiceCenter.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfAppServiceCenter"
+        mc:Ignorable="d"
+        Title="Сервисный Центр" Height="700" Width="1200">
+    <Window.Background>
+        <ImageBrush ImageSource="/resurs/seeee.png"/>
+    </Window.Background>
+<Grid>
+        <Frame  Background="Transparent" x:Name="miFrame">
+            
+        </Frame>
+    </Grid>
+</Window>

@@ -1,0 +1,55 @@
+﻿<Page x:Class="WpfAppServiceCenter.Org.Orders"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfAppServiceCenter.Org"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="1200"
+      Title="Orders">
+
+    <Grid>
+        <StackPanel>
+            <TextBlock Text="Клиент" FontSize="35" Height="50" HorizontalAlignment="Center" Style="{StaticResource texOrders}" />
+            <StackPanel Margin="0,0,0,10" HorizontalAlignment="Center"  Orientation="Horizontal">
+                <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left"  Orientation="Vertical">
+                    <TextBlock Text="Ф И О" Style="{StaticResource texOrders}"/>
+                    <TextBox Style="{StaticResource TextBoxOrders}" />
+                </StackPanel>
+                <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left" Orientation="Vertical">
+                    <TextBlock Text="Телефон" Style="{StaticResource texOrders}"/>
+                    <TextBox Style="{StaticResource TextBoxOrders}" />
+                </StackPanel>
+                <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left"  Orientation="Vertical">
+                    <TextBlock Text="Адрес место жительства" Style="{StaticResource texOrders}"/>
+                    <TextBox Style="{StaticResource TextBoxOrders}" />
+                </StackPanel>
+                
+
+            </StackPanel>
+            <TextBlock Text="Техника" FontSize="35" Height="50" HorizontalAlignment="Center" Style="{StaticResource texOrders}" />
+            <StackPanel HorizontalAlignment="Center"  Orientation="Horizontal">
+                <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left"  Orientation="Vertical">
+                    <TextBlock Text="Название техники" Style="{StaticResource texOrders}"/>
+                    <TextBox Style="{StaticResource TextBoxOrders}" />
+                </StackPanel>
+                <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left" Orientation="Vertical">
+                    <TextBlock Text="Описание неисправности" Style="{StaticResource texOrders}"/>
+                    <TextBox Style="{StaticResource TextBoxOrders}" />
+                </StackPanel>
+                <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left"  Orientation="Vertical">
+                    <TextBlock Text="Дта регистрации заказа" Style="{StaticResource texOrders}"/>
+                    <TextBox Style="{StaticResource TextBoxOrders}" />
+                </StackPanel>
+
+
+            </StackPanel>
+            <StackPanel>
+                
+            <Button Margin="0,16,0,0" Content="Оформить заказ" HorizontalAlignment="Center" VerticalAlignment="Bottom" />
+                
+            </StackPanel>
+            
+        </StackPanel>
+    </Grid>
+</Page>

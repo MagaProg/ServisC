@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище ServiceCenterModelContainer" CdmEntityContainer="ServiceCenterEntities">
+    <EntitySetMapping Name="Cluent">
+      <EntityTypeMapping TypeName="ServiceCenterModel.Cluent">
+        <MappingFragment StoreEntitySet="Cluent">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="idOrders" ColumnName="idOrders" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Master">
+      <EntityTypeMapping TypeName="ServiceCenterModel.Master">
+        <MappingFragment StoreEntitySet="Master">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="idOrders" ColumnName="idOrders" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MasterOrdersMaster">
+      <EntityTypeMapping TypeName="ServiceCenterModel.MasterOrdersMaster">
+        <MappingFragment StoreEntitySet="MasterOrdersMaster">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Vremonta" ColumnName="Vremonta" />
+          <ScalarProperty Name="Stoimremon" ColumnName="Stoimremon" />
+          <ScalarProperty Name="opisrem" ColumnName="opisrem" />
+          <ScalarProperty Name="zatrelement" ColumnName="zatrelement" />
+          <ScalarProperty Name="detalnaxamen" ColumnName="detalnaxamen" />
+          <ScalarProperty Name="stoimDiagnos" ColumnName="stoimDiagnos" />
+          <ScalarProperty Name="idOrders" ColumnName="idOrders" />
+          <ScalarProperty Name="idCluent" ColumnName="idCluent" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="ServiceCenterModel.Orders">
+        <MappingFragment StoreEntitySet="Orders">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="NameTechnic" ColumnName="NameTechnic" />
+          <ScalarProperty Name="Malfunctions" ColumnName="Malfunctions" />
+          <ScalarProperty Name="DateOrders" ColumnName="DateOrders" />
+          <ScalarProperty Name="idMaster" ColumnName="idMaster" />
+          <ScalarProperty Name="idMasterOrders" ColumnName="idMasterOrders" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rolle">
+      <EntityTypeMapping TypeName="ServiceCenterModel.Rolle">
+        <MappingFragment StoreEntitySet="Rolle">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="NameRolle" ColumnName="NameRolle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User">
+      <EntityTypeMapping TypeName="ServiceCenterModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="idRolle" ColumnName="idRolle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
