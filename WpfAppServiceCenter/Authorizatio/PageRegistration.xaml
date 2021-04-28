@@ -13,7 +13,7 @@
         <TextBlock Style="{StaticResource tex}" HorizontalAlignment="Center" Width="500"  FontSize="26" VerticalAlignment="Top" TextAlignment="Center"   Margin="10" Text="Р е г и с т р а ц и я" Height="39"/>
             <StackPanel Orientation="Horizontal">
                 <TextBlock  Style="{StaticResource tex}" Text="Выберите роль"/>
-                <ComboBox DisplayMemberPath="NameRolle" x:Name="CMDRolli"/>
+                <ComboBox DisplayMemberPath="NameRolle" Background="Red" x:Name="CMDRolli"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <TextBlock  Style="{StaticResource tex}" Text="Введите логин:"/>

@@ -25,7 +25,7 @@
 
             <Button x:Name= "btnAuto" Click="btnAuto_Click" Margin="10" Content="Войти" />
         <Button Style="{StaticResource FolsNavid}" HorizontalAlignment="Center" VerticalAlignment="Bottom"  Height="20" Background="Transparent" BorderBrush="Transparent" Foreground="Red" x:Name="ClikRegist" Click="ClikRegist_Click" Content="Еще нет аккаунта?" MouseEnter="ClikRegist_MouseEnter" />
-            
+            <TextBlock  Style="{StaticResource tex}" x:Name="timER" TextAlignment="Center"/>
         </StackPanel>
     </Grid>
 </Page>
